@@ -13,4 +13,21 @@
  * */
 export default class Team {
   // TODO: write your logic here
+  constructor(player) {
+    this.characters = new Set();
+    this.add(player);
+  }
+
+  add(players) {
+    players.forEach((character) => {
+      this.characters.add(character);
+    });
+  }
+
+  toArray() {
+    if (this.characters.size === 0) {
+      return [];
+    }
+    return [...this.characters];
+  }
 }
